@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 const mongoose = require("mongoose");
 
 var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/googlebookslist";
+  process.env.MONGODB_URI || "mongodb://book-search-user:C5pkhi6r12!@ds041238.mlab.com:41238/heroku_5dcw1tvr";
 
 mongoose.connect(MONGODB_URI);
 
