@@ -25,6 +25,7 @@
     "if-env": "^1.0.4",
     "mangodb": "^1.0.0",
     "mongoose": "^5.7.11",
+    "react": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "routes": "^2.1.0"
   }
