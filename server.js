@@ -12,14 +12,20 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const mongoose = require("mongoose");
-const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/googlebookslist"
-mongoose.connect(mongoURL, { useNewUrlParser: true })
-  .then(() => {
-    console.log(" ==> Successfully connected to mongoDB.");
-  })
-  .catch((err) => {
-    console.log(`Error connecting to mongoDB: ${err}`);
-  });
+
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/googlebookslist";
+
+mongoose.connect(MONGODB_URI);
+
+// const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/googlebookslist"
+// mongoose.connect(mongoURL, { useNewUrlParser: true })
+//   .then(() => {
+//     console.log(" ==> Successfully connected to mongoDB.");
+//   })
+//   .catch((err) => {
+//     console.log(`Error connecting to mongoDB: ${err}`);
+//   });
 
 require("./routes/api-routes")(app);
 
