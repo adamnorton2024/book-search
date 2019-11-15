@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "Book Search - React",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "Book Search App using React",
   "private": true,
   "proxy": "http://localhost:3002/",
   "dependencies": {
