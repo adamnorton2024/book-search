@@ -1,9 +1,9 @@
 const axios = require("axios");
 const db = require("../models");
 const path = require("path");
-require('dotenv').config();
+// require('dotenv').config();
 
-const APIkey = process.env.REACT_APP_API_KEY;
+// const APIkey = process.env.REACT_APP_API_KEY;
 
 module.exports = function (app) {
     app.get("/api/books", (req, res) => {
@@ -22,7 +22,7 @@ module.exports = function (app) {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${APIkey}`
+            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`
         ).then(
             (response) => {
                 res.json(response.data.items)
