@@ -1,7 +1,7 @@
 //require('dotenv').config();
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -12,10 +12,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const mongoose = require("mongoose");
-const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:3001/googlebooks"
+const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/googlebookslist"
 mongoose.connect(mongoURL, { useNewUrlParser: true })
   .then(() => {
-    console.log("🗄 ==> Successfully connected to mongoDB.");
+    console.log(" ==> Successfully connected to mongoDB.");
   })
   .catch((err) => {
     console.log(`Error connecting to mongoDB: ${err}`);
